@@ -1,0 +1,6 @@
+flask
+flask-cors
+strands-agents
+requests
+hypothesis
+pytest

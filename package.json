@@ -1,0 +1,14 @@
+{
+  "name": "ecommerce-app",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm start",
+    "chatbot": "cd chatbot && source venv/bin/activate && python app.py",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run chatbot\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

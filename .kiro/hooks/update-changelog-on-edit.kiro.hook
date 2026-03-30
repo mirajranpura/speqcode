@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "name": "Update Changelog on File Edit",
+  "description": "When a source code file is modified, automatically updates CHANGELOG.md with a timestamped entry including the file name and a brief summary of what changed.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.js",
+      "**/*.ts",
+      "**/*.jsx",
+      "**/*.tsx",
+      "**/*.py",
+      "**/*.css",
+      "**/*.html"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A source code file was just modified. Please:\n\n1. Read the modified file to understand what changed.\n2. Update (or create if it doesn't exist) the CHANGELOG.md file in the project root with a new entry that includes:\n   - The current timestamp in ISO 8601 format (YYYY-MM-DD HH:MM)\n   - The name/path of the file that was changed\n   - A brief, clear summary of what was modified\n\nFormat the entry under a \"## [Unreleased]\" section like this:\n\n## [Unreleased]\n\n### Changed\n- `<file path>` — <brief summary of changes> _(YYYY-MM-DD HH:MM)_\n\nIf CHANGELOG.md already exists, prepend the new entry under the [Unreleased] section. Keep existing entries intact. Use clear, concise language useful for developers tracking project changes."
+  },
+  "workspaceFolderName": "KiroTester",
+  "shortName": "update-changelog-on-edit"
+}
